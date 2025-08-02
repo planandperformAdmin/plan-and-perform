@@ -1,0 +1,7 @@
+{
+  "name": "plan-and-perform",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
