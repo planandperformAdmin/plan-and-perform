@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
 })
-export class ToastComponent  implements OnInit {
+export class ToastComponent{
 
-  constructor() { }
+  constructor(private toastController: ToastController) { }
 
-  ngOnInit() {}
+  async presentToast(message: string, color: 'success' | 'danger' | 'warning' = 'success', duration = 2000) {
+    const toast = await this.toastController.create({
+      message,
+      duration,
+      color,
+      position: 'bottom'
+    });
+    await toast.present();
+  }
 
 }
