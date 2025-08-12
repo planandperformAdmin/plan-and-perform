@@ -1,0 +1,86 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card ion-card-header {
+  padding-bottom: 0;
+}
+
+.auth-card ion-card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.auth-card ion-card-subtitle {
+  color: #666;
+}
+
+ion-item {
+  --background: #f7f7f7;
+  --border-radius: 8px;
+  --border-color: transparent;
+  --box-shadow: none;
+  --padding-start: 12px;
+}
+
+ion-input {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  color: #333;
+}
+
+ion-button {
+  --border-radius: 8px;
+  --box-shadow: none;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.social-login-btn {
+  --background: #fff;
+  --color: #333;
+  --border-color: #ddd;
+  --border-style: solid;
+  --border-width: 1px;
+}
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #ccc;
+  z-index: 1;
+}
+
+.divider-text span {
+  background: white;
+  padding: 0 10px;
+  position: relative;
+  z-index: 2;
+  font-size: 0.9em;
+  color: #888;
+}
+
+ion-label[position="floating"] {
+  color: #666;
+}

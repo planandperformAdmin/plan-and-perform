@@ -1,21 +1,50 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" formControlName="email"></ion-input>
-    </ion-item>
+<ion-content class="ion-padding ion-text-center">
+  <div class="auth-container">
+    <ion-card class="auth-card">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Bun venit înapoi!</ion-card-title>
+        <ion-card-subtitle class="ion-text-center">Autentifică-te pentru a continua</ion-card-subtitle>
+      </ion-card-header>
 
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
-    </ion-item>
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <ion-item class="ion-margin-bottom">
+            <ion-input label="Email" labelPlacement="floating" type="email" formControlName="email"></ion-input>
+          </ion-item>
+          
+          <ion-item class="ion-margin-bottom">
+            <ion-input label="Parolă" labelPlacement="floating" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          
+          <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">
+            Login
+          </ion-button>
+        </form>
 
-    <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">Login</ion-button>
-  </form>
+        <p class="ion-text-right ion-margin-top">
+          <a routerLink="/forgot-password">Ai uitat parola?</a>
+        </p>
+
+        <div class="divider-text">
+          <span>sau</span>
+        </div>
+
+        <ion-button expand="block" fill="outline" class="social-login-btn">
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+          Login cu Google
+        </ion-button>
+        
+        <p class="ion-text-center ion-margin-top">Nu ai un cont? <a routerLink="/register">Înregistrează-te</a></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

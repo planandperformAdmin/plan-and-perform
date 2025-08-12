@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastService } from 'src/app/core/services/toast.service';
@@ -9,7 +9,7 @@ import { ToastComponent } from 'src/app/shared/components/toast/toast.component'
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, IonicModule],
+  imports: [ReactiveFormsModule, IonicModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })

@@ -1,0 +1,41 @@
+.custom-tab-bar {
+  --background: #ffffff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  padding: 8px 0;
+}
+
+ion-tab-button {
+  --color: #a0a0a0;
+  --color-selected: #5c6bc0; /* Culoarea pentru tab-ul activ */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+}
+
+/* Ascunde tab-ul "placeholder" pentru a-l face invizibil */
+ion-tab-button[tab="pro-placeholder"] {
+  opacity: 0;
+  pointer-events: none; /* Dezactivează interacțiunea cu acest tab */
+}
+
+.pro-button-wrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.pro-button {
+  --background: #ff7043;
+  --box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
+  width: 60px;
+  height: 60px;
+  --border-radius: 50%;
+}
+
+.pro-icon {
+  font-size: 28px;
+  color: #ffffff;
+}

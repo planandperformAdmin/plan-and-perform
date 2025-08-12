@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth.guard';
 
 
 export const routes: Routes = [
@@ -12,7 +13,8 @@ export const routes: Routes = [
   },
   {
     path:'edit-profile',
-    loadComponent: () => import('./features/profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent)
+    loadComponent: () => import('./features/profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent),
+    canActivate: [authGuard]
   },
   {
     path: 'home',
@@ -22,5 +24,5 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  },
+  }
 ];
