@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonModal } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastService } from 'src/app/core/services/toast.service';
+import { RouterModule, Router } from '@angular/router'; // Adaugă Router și RouterModule
 
 @Component({
   selector: 'app-edit-profile',
   standalone: true,
-  imports: [ReactiveFormsModule, IonicModule],
+  imports: [ReactiveFormsModule, IonicModule, RouterModule], // Adaugă RouterModule
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.scss'],
 })
 export class EditProfileComponent implements OnInit {
+
+  @ViewChild('editProfileModal') editProfileModal!: IonModal;
 
   profileForm = this.fb.group({
     username: ['', Validators.required],
@@ -29,7 +32,8 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private router: Router // Injectează Router-ul
   ) {}
 
   async ngOnInit() {
@@ -42,6 +46,19 @@ export class EditProfileComponent implements OnInit {
     this.userId = user.id;
     this.userEmail = user.email ?? null;
     await this.loadProfile();
+  }
+
+  getAge(): number | null {
+    const birthDate = this.profileForm.get('birthDate')?.value;
+    if (!birthDate) return null;
+    const today = new Date();
+    const birth = new Date(birthDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    return age;
   }
 
   async loadProfile() {
@@ -91,6 +108,14 @@ export class EditProfileComponent implements OnInit {
       await this.toastService.presentToast(`Save error: ${error.message}`, 'danger');
     } else {
       await this.toastService.presentToast('Profile saved successfully', 'success');
+      this.editProfileModal.dismiss();
     }
+  }
+
+  // Adaugă această metodă onLogout() pentru a rezolva eroarea
+  async onLogout() {
+    await this.authService.logout();
+    await this.toastService.presentToast('Logged out successfully!', 'success');
+    this.router.navigate(['/login']); // Redirecționează către pagina de login
   }
 }

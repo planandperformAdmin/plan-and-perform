@@ -1,27 +1,228 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --background: #f4f5f8;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.welcome-section {
+  margin-bottom: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.welcome-section h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
 
-  color: #8c8c8c;
+.welcome-section p {
+  font-size: 1rem;
+  color: #666;
+}
 
+.daily-progress-card, .goals-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.daily-progress-card ion-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.progress-info h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+.progress-info .unit {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.progress-bar-container {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--ion-color-primary);
+  transition: width 0.3s ease-in-out;
+}
+
+.goals-card ion-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.goal-item ion-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: var(--ion-color-primary);
+}
+
+.goal-item h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.goal-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+ion-progress-bar {
+  --progress-background: #e0e0e0;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.action-button {
+  --border-radius: 10px;
+}
+/* ... Restul stilurilor rămân neschimbate ... */
+
+.daily-progress-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.calorie-donut-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.donut-chart-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.donut-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-center {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+}
+
+.donut-center .consumed {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.donut-center .target {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.macro-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.macro-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.macro-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.macro-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.color-dot.protein { background-color: var(--ion-color-tertiary); }
+.color-dot.carbs { background-color: var(--ion-color-warning); }
+.color-dot.fats { background-color: var(--ion-color-success); }
+
+/* ... Restul stilurilor rămân neschimbate ... */
+
+.quote-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  background: var(--ion-color-secondary); /* Folosește o culoare secundară pentru a-l scoate în evidență */
+  color: #fff;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.quote-container ion-icon {
+  font-size: 2rem;
+  min-width: 30px;
+  color: #fff;
+}
+
+.quote-container p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.quote-author {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
