@@ -1,65 +1,79 @@
 <ion-content class="ion-padding">
 
-  <ion-card class="user-card">
-    <div class="user-info-section">
-      <div class="profile-pic-container">
-        <img src="URL_IMAGINE_PROFIL" alt="Profile Picture" class="profile-pic">
+  <ion-card class="main-profile-card">
+    <div class="profile-header">
+      <div class="profile-pic-frame">
+        <img src="https://i.ibb.co/L9H8FvC/mondi-morris.png" alt="Profile Picture">
       </div>
-      <div class="user-details-text">
-        <h2 class="user-name">Alex Cole</h2>
-        <p class="user-email">alsayedm806@gmail.com</p>
-      </div>
+      <h2 class="profile-name">Mondi Morris</h2>
+      <p class="profile-email">mondimorris@gmail.com</p>
     </div>
-    <ion-button routerLink="/edit-profile" class="edit-button-card">
-      <ion-icon name="create-outline"></ion-icon> edit
-    </ion-button>
   </ion-card>
 
-  <div class="options-grid">
-    <ion-card class="option-card">
-      <ion-item>
-        <ion-icon name="heart-outline" slot="start"></ion-icon>
-        <ion-label>Sync to Health Connect</ion-label>
-        <ion-toggle slot="end"></ion-toggle>
-      </ion-item>
+  <div class="stats-grid">
+    <ion-card class="stat-card">
+      <div class="stat-item">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="scale-outline"></ion-icon>
+        </div>
+        <div class="stat-value">65.5 kg</div>
+        <div class="stat-label">Weight</div>
+      </div>
     </ion-card>
 
-    <div class="middle-group">
-      <ion-card class="option-card">
-        <ion-item routerLink="/general-settings">
-          <ion-icon name="cog-outline" slot="start"></ion-icon>
-          <ion-label>General settings</ion-label>
-        </ion-item>
-      </ion-card>
-      <ion-card class="option-card">
-        <ion-item routerLink="/faqs">
-          <ion-icon name="help-circle-outline" slot="start"></ion-icon>
-          <ion-label>FAQs</ion-label>
-        </ion-item>
-      </ion-card>
-    </div>
+    <ion-card class="stat-card">
+      <div class="stat-item">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="man-outline"></ion-icon>
+        </div>
+        <div class="stat-value">5.7 Fit</div>
+        <div class="stat-label">Hight</div>
+      </div>
+    </ion-card>
 
-    <div class="middle-group">
-      <ion-card class="option-card">
-        <ion-item routerLink="/share-app">
-          <ion-icon name="share-social-outline" slot="start"></ion-icon>
-          <ion-label>Share the app</ion-label>
-        </ion-item>
-      </ion-card>
-      <ion-card class="option-card">
-        <ion-item routerLink="/rate-us">
-          <ion-icon name="star-outline" slot="start"></ion-icon>
-          <ion-label>Rate us</ion-label>
-        </ion-item>
-      </ion-card>
-    </div>
-
-    <ion-card class="option-card logout-card">
-      <ion-item class="logout-item" (click)="logout()">
-        <ion-icon name="log-out-outline" slot="start"></ion-icon>
-        <ion-label>Logout</ion-label>
-        <ion-icon name="chevron-forward-outline" slot="end" class="arrow-icon"></ion-icon>
-      </ion-item>
+    <ion-card class="stat-card">
+      <div class="stat-item">
+        <div class="stat-icon-wrapper">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <div class="stat-value">25 Years</div>
+        <div class="stat-label">Age</div>
+      </div>
     </ion-card>
   </div>
+
+  <ion-card class="premium-banner">
+    <ion-item lines="none">
+      <ion-label>
+        <span class="pro-tag">Pro</span>
+        <h3>Go Premium & Unlock More!</h3>
+        <p>Upgrade to Premium and enjoy exclusive features.</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-card>
+
+  <ion-list class="options-list">
+    <ion-item lines="none" detail routerLink="/edit-profile">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label>Edit Profile</ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="notifications-outline" slot="start"></ion-icon>
+      <ion-label>Notification</ion-label>
+      <ion-toggle slot="end" mode="md" checked></ion-toggle>
+    </ion-item>
+
+    <ion-item lines="none" detail routerLink="/settings">
+      <ion-icon name="settings-outline" slot="start"></ion-icon>
+      <ion-label>Setting</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" class="logout-btn">
+    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+    Log Out
+  </ion-button>
+
 </ion-content>

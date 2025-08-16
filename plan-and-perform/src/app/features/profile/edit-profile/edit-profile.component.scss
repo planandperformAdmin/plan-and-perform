@@ -1,123 +1,58 @@
 ion-toolbar {
-  --background: #fff;
-  --color: #000;
-  --border-width: 0;
+  --background: #121212;
+  --color: #fff;
 }
 
 ion-content {
-  --background: #f4f5f8;
+  --background: #121212;
+  color: #fff;
 }
 
-/* Card-ul de profil */
-.profile-card {
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+.profile-picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .profile-avatar {
-  position: relative;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
 }
 
 .profile-avatar img {
+  border: 4px solid #fff;
   border-radius: 50%;
-  border: 2px solid #fff;
 }
 
-.profile-avatar ion-fab-button {
-  --background: #fff;
-  --color: var(--ion-color-primary);
-  --box-shadow: none;
-  --size: 28px;
+.change-photo-btn {
+  --background: #232323;
+  --color: #ffc107;
+  --border-radius: 20px;
+  font-size: 0.8rem;
+  height: 30px;
 }
 
-.profile-card h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.profile-card p {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.edit-link {
-  display: flex;
-  align-items: center;
-  color: var(--ion-color-primary);
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.edit-link ion-icon {
-  margin-inline-end: 5px;
-}
-
-/* Card-ul de măsurători */
-.metrics-card {
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  padding: 10px 0;
-}
-
-.metric-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  border-bottom: 1px solid #eee;
-}
-
-.metric-item:last-of-type {
-  border-bottom: none;
-}
-
-.metric-text h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.metric-text p {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
-  padding-top: 2px;
-}
-
-/* Lista de opțiuni */
-ion-list {
+.edit-profile-list {
   background: transparent;
   padding: 0;
 }
 
-.option-item {
-  --background: #fff;
-  --border-radius: 15px;
-  --border-width: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.edit-profile-item {
+  --background: #232323;
+  --border-radius: 10px;
+  --color: #fff;
   margin-bottom: 10px;
-  transition: transform 0.2s ease-in-out;
 }
 
-.option-item:hover {
-  transform: translateY(-2px);
+.edit-profile-item ion-input,
+.edit-profile-item ion-select {
+  --color: #fff;
+  --placeholder-color: #a0a0a0;
+  --placeholder-opacity: 0.8;
 }
 
-.option-item ion-icon {
-  --ionicon-color: #666;
-  font-size: 1.6rem;
-}
-
-.option-item h3 {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.option-item p {
-  font-size: 0.8rem;
-  color: #888;
+.edit-profile-item ion-label {
+  color: #a0a0a0;
 }

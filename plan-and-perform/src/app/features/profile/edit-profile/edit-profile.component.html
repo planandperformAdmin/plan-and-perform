@@ -1,198 +1,63 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Profilul meu</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editează Profil</ion-title>
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="information-circle-outline"></ion-icon>
-      </ion-button>
+      <ion-button (click)="onSave()">Salvează</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card class="profile-card">
-    <ion-item lines="none">
-      <ion-avatar slot="start" class="profile-avatar">
+  <form [formGroup]="profileForm">
+    <div class="profile-picture-section">
+      <ion-avatar class="profile-avatar">
         <img [src]="profileForm.get('profilePictureUrl')?.value || 'https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd654d001469146a?s=250'" alt="Poza de profil"/>
-        <ion-fab vertical="center" horizontal="end">
-          <ion-fab-button size="small" color="light">
-            <ion-icon name="camera"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
       </ion-avatar>
-      <ion-label>
-        <h2>{{ profileForm.get('firstName')?.value }} {{ profileForm.get('lastName')?.value }}</h2>
-        <p>{{ getAge() }} ani, {{ profileForm.get('activityLevel')?.value }}</p>
-        <ion-button fill="clear" size="small" id="open-edit-profile-modal">
-          <ion-icon name="create-outline" slot="start"></ion-icon>
-          Modifică datele personale
-        </ion-button>
-      </ion-label>
-    </ion-item>
-  </ion-card>
-  
-  <ion-modal #editProfileModal trigger="open-edit-profile-modal">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="editProfileModal.dismiss()">Anulează</ion-button>
-          </ion-buttons>
-          <ion-title>Editează Profil</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="onSave()">Salvează</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <form [formGroup]="profileForm">
-          <ion-list lines="full">
-            <ion-item>
-              <ion-input label="Nume" labelPlacement="floating" formControlName="firstName"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input label="Prenume" labelPlacement="floating" formControlName="lastName"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input label="Nume de utilizator" labelPlacement="floating" formControlName="username"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input label="URL poză de profil" labelPlacement="floating" formControlName="profilePictureUrl"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input label="Data nașterii" labelPlacement="floating" id="birthDateInput" formControlName="birthDate"></ion-input>
-              <ion-modal trigger="birthDateInput">
-                <ng-template>
-                  <ion-datetime presentation="date" formControlName="birthDate"></ion-datetime>
-                </ng-template>
-              </ion-modal>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Sex" formControlName="sex" interface="popover" placeholder="Selectează">
-                <ion-select-option value="male">Masculin</ion-select-option>
-                <ion-select-option value="female">Feminin</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Nivel de activitate" formControlName="activityLevel" interface="popover" placeholder="Selectează">
-                <ion-select-option value="sedentary">Sedentar (&lt;5000 pași)</ion-select-option>
-                <ion-select-option value="lightly_active">Ușor activ (5000-10000 pași)</ion-select-option>
-                <ion-select-option value="active">Activ (>10000 pași)</ion-select-option>
-                <ion-select-option value="very_active">Foarte activ (>12500 pași)</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-        </form>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+      <ion-button class="change-photo-btn">
+        <ion-icon name="camera-outline" slot="start"></ion-icon>
+        Schimbă poza
+      </ion-button>
+    </div>
 
-  <ion-card class="metrics-card">
-    <ion-card-content>
-      <div class="metric-item">
-        <div class="metric-text">
-          <h3>IMC - Indice masă corporală</h3>
-          <p>Supraponderal - 25.38 kg/m2</p>
-        </div>
-        <ion-icon name="information-circle-outline"></ion-icon>
-      </div>
-
-      <div class="metric-item">
-        <div class="metric-text">
-          <h3>BMR - Rata metabolică bazală</h3>
-          <p>1839 kCal</p>
-        </div>
-        <ion-icon name="information-circle-outline"></ion-icon>
-      </div>
-
-      <div class="metric-item">
-        <div class="metric-text">
-          <h3>TDEE - Necesar caloric menținere</h3>
-          <p>2850 kCal</p>
-        </div>
-        <ion-icon name="information-circle-outline"></ion-icon>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-list lines="full">
-    <ion-item class="option-item" button routerLink="/poze-progres">
-      <ion-icon name="image-outline" slot="start"></ion-icon>
-      <ion-label>
-        <h3>Poze progres</h3>
-        <p>Fă poze, vezi istoricul pozelor, compară zile de progres diferite</p>
-      </ion-label>
-    </ion-item>
+    <ion-list class="edit-profile-list" lines="none">
+      <ion-item class="edit-profile-item">
+        <ion-input label="Nume" labelPlacement="stacked" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-input label="Prenume" labelPlacement="stacked" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-input label="Nume de utilizator" labelPlacement="stacked" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-input label="URL poză de profil" labelPlacement="stacked" formControlName="profilePictureUrl"></ion-input>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-input label="Data nașterii" labelPlacement="stacked" id="birthDateInput" formControlName="birthDate"></ion-input>
+        <ion-modal trigger="birthDateInput">
+          <ng-template>
+            <ion-datetime presentation="date" formControlName="birthDate"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-select label="Sex" formControlName="sex" interface="popover" placeholder="Selectează">
+          <ion-select-option value="male">Masculin</ion-select-option>
+          <ion-select-option value="female">Feminin</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="edit-profile-item">
+        <ion-select label="Nivel de activitate" formControlName="activityLevel" interface="popover" placeholder="Selectează">
+          <ion-select-option value="sedentary">Sedentar (<5000 pași)</ion-select-option>
+          <ion-select-option value="lightly_active">Ușor activ (5000-10000 pași)</ion-select-option>
+          <ion-select-option value="active">Activ (>10000 pași)</ion-select-option>
+          <ion-select-option value="very_active">Foarte activ (>12500 pași)</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
     
-    <ion-item class="option-item" button routerLink="/masuratori">
-      <ion-icon name="scale-outline" slot="start"></ion-icon>
-      <ion-label>
-        <h3>Măsurători</h3>
-        <p>Nu poți îmbunătăți ceea ce nu măsori</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item class="option-item" button routerLink="/prieteni">
-      <ion-icon name="people-outline" slot="start"></ion-icon>
-      <ion-label>
-        <h3>Prieteni</h3>
-        <p>Să "Eat & Track" e mai ușor cu prietenii</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item class="option-item" button routerLink="/post-intermitent">
-      <ion-icon name="timer-outline" slot="start"></ion-icon>
-      <ion-label>
-        <h3>Post Intermitent</h3>
-        <p>Ține evidența perioadelor de post intermitent</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-label class="options-header">Alte opțiuni</ion-label>
-  <ion-list lines="full">
-    <ion-item button routerLink="/schimba-parola">
-      <ion-icon name="key-outline" slot="start"></ion-icon>
-      <ion-label>Schimbă parola</ion-label>
-    </ion-item>
-    
-    <ion-item button routerLink="/schimba-email">
-      <ion-icon name="mail-outline" slot="start"></ion-icon>
-      <ion-label>Schimbă adresa de email</ion-label>
-    </ion-item>
-    
-    <ion-item button routerLink="/restaurare-achizitie">
-      <ion-icon name="medal-outline" slot="start"></ion-icon>
-      <ion-label>Restaurare achiziție</ion-label>
-    </ion-item>
-    
-    <ion-item button routerLink="/setari">
-      <ion-icon name="settings-outline" slot="start"></ion-icon>
-      <ion-label>Setări</ion-label>
-    </ion-item>
-    
-    <ion-item button routerLink="/termeni-conditii">
-      <ion-icon name="people-outline" slot="start"></ion-icon>
-      <ion-label>Termeni și condiții</ion-label>
-    </ion-item>
-    
-    <ion-item button routerLink="/politica-confidentialitate">
-      <ion-icon name="people-outline" slot="start"></ion-icon>
-      <ion-label>Politica de confidențialitate</ion-label>
-    </ion-item>
-    
-    <ion-item button detail="false" class="delete-account" routerLink="/sterge-cont">
-      <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
-      <ion-label>Ștergere cont</ion-label>
-    </ion-item>
-    
-    <ion-item button (click)="onLogout()">
-      <ion-icon name="log-out-outline" slot="start"></ion-icon>
-      <ion-label>Ieșire</ion-label>
-    </ion-item>
-  </ion-list>
-
-  <div class="app-version-container">
-    <p>Versiune aplicație 1.1.0.9 (169)</p>
-  </div>
+  </form>
 </ion-content>
