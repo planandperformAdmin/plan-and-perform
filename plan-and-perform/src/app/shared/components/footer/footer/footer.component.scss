@@ -1,41 +1,51 @@
-.custom-tab-bar {
-  --background: #ffffff;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
-  padding: 8px 0;
+.floating-tab-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Ajustează lățimea pentru a lăsa spațiu pe laterale */
+  max-width: 500px; /* Limitează lățimea pe ecrane mari */
+  background: #1c1c1c; /* Fundal negru semi-transparent */
+  border-radius: 50px;
+  padding: 8px 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ion-tab-button {
   --color: #a0a0a0;
-  --color-selected: #5c6bc0; /* Culoarea pentru tab-ul activ */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --color-selected: #fff;
+  background: transparent;
+  flex: 1;
+  max-width: 20%;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+}
+
+ion-tab-button ion-label {
   font-size: 11px;
+  margin-top: 3px;
 }
 
-/* Ascunde tab-ul "placeholder" pentru a-l face invizibil */
-ion-tab-button[tab="pro-placeholder"] {
-  opacity: 0;
-  pointer-events: none; /* Dezactivează interacțiunea cu acest tab */
-}
-
-.pro-button-wrapper {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.pro-button {
-  --background: #ff7043;
-  --box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
+/* Stil pentru butonul central PRO */
+.pro-tab-button {
+  --background: #ffc107;
+  --color: #000;
+  border-radius: 50%;
   width: 60px;
   height: 60px;
-  --border-radius: 50%;
+  min-width: 60px;
+  min-height: 60px;
+  margin: 0 10px;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.pro-icon {
-  font-size: 28px;
-  color: #ffffff;
+.pro-tab-button ion-icon {
+  font-size: 32px;
+  color: #000;
+  margin: 0;
 }

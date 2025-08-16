@@ -1,5 +1,5 @@
 <ion-tabs>
-  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+  <ion-tab-bar slot="bottom" class="floating-tab-bar">
     <ion-tab-button (click)="goTo('/jurnal')">
       <ion-icon name="book-outline"></ion-icon>
       <ion-label>Jurnal</ion-label>
@@ -10,8 +10,9 @@
       <ion-label>Rețete</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button>
-      <!-- Acest tab-button este necesar pentru a menține spațiul corect în layout -->
+    <ion-tab-button class="pro-tab-button">
+      <!-- Butonul PRO va fi stilizat aici -->
+      <ion-icon name="medal-outline" class="pro-icon-tab"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button (click)="goTo('/specialisti')">
@@ -19,15 +20,9 @@
       <ion-label>Specialiști</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button (click)="goTo('/edit-profile')">
+    <ion-tab-button (click)="goTo('/profile')">
       <ion-icon name="person-outline"></ion-icon>
       <ion-label>Profil</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
-
-<div class="pro-button-wrapper">
-  <ion-button class="pro-button" shape="round" (click)="goTo('/pro')">
-    <ion-icon name="medal-outline" class="pro-icon"></ion-icon>
-  </ion-button>
-</div>
