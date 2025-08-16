@@ -1,0 +1,304 @@
+ion-content {
+  --background: #f4f5f8;
+}
+
+/* Secțiunea de bun venit */
+.welcome-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.user-avatar-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.welcome-text h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #666;
+  margin: 0;
+}
+
+.welcome-text h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Card de progres al antrenamentului */
+.workout-progress-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: #232227; /* Culoare de fundal specifică */
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.workout-progress-card .progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.progress-text h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.progress-text p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.progress-donut {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+/* Stiluri pentru graficele circulare (donut) */
+.donut-chart-small {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.donut-center-small {
+  background-color: #232227;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.donut-center-small span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Secțiunea "Today's Activity" */
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-header h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.edit-button-container {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+
+.activity-items-container {
+  display: flex;
+  gap: 10px;
+}
+
+.calories-card {
+  min-width: 120px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f76b8a, #f8a5a5); /* Culorile din imagine */
+  color: #fff;
+  text-align: center;
+  flex-grow: 0;
+  padding: 15px 10px;
+}
+
+.calories-card ion-icon {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.calories-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.calories-card p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.exercise-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dot {
+  width: 5px;
+  height: 100%;
+  border-radius: 5px;
+  min-height: 40px;
+}
+
+/* Culori pentru puncte */
+.orange-dot { background-color: #ff9f43; }
+.blue-dot { background-color: #00d2d3; }
+.purple-dot { background-color: #a45a9f; }
+
+.exercise-item h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.exercise-item p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+.activity-reps {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  margin-left: auto;
+}
+
+/* Secțiunea "Overall Status" */
+.overall-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.overall-status-header h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.overall-status-header a {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.overall-status-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.overall-status-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 0;
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.status-icon {
+  font-size: 2rem;
+}
+
+.status-text {
+  flex-grow: 1;
+}
+
+.status-text h3 {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.status-text h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.status-text p {
+  font-size: 0.8rem;
+  color: var(--ion-color-success);
+  margin: 0;
+}
+
+.status-donut {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+/* Stiluri pentru graficele mici (donut) */
+.donut-chart-tiny {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.donut-center-tiny {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.donut-center-tiny span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Culori pentru iconițele din Overall Status */
+.status-icon.flame { color: #ff9f43; }
+.status-icon.scale { color: #00d2d3; }

@@ -1,0 +1,151 @@
+ion-content {
+  --background: #f4f5f8;
+}
+
+/* Stiluri generale pentru secțiuni */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.see-more {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+
+/* Secțiunea "Popular Exercises" */
+.popular-exercises-scroll {
+  display: flex;
+  overflow-x: scroll;
+  gap: 15px;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.exercise-card {
+  min-width: 250px; /* Latimea cardurilor */
+  height: 180px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.exercise-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Suprapunere semi-transparentă pentru a face textul lizibil */
+  z-index: 1;
+}
+
+.home-workout-card {
+  background: url('https://i.ibb.co/6y4Tj82/female-runner.jpg') no-repeat center center/cover;
+}
+
+.hand-exercise-card {
+  background: url('https://i.ibb.co/hV757gD/hand-exercise.jpg') no-repeat center center/cover;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 2;
+  color: #fff;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.rating ion-icon {
+  font-size: 1rem;
+  color: gold;
+}
+
+/* Secțiunea "Our Collection" */
+.collection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.collection-card {
+  height: 120px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Suprapunere mai deschisă */
+  z-index: 1;
+}
+
+.chest-card {
+  background: url('https://i.ibb.co/P4yP2z1/chest-abdominal.jpg') no-repeat center center/cover;
+}
+
+.back-card {
+  background: url('https://i.ibb.co/D8d31Xj/back-shoulder.jpg') no-repeat center center/cover;
+}
+
+.card-content-collection {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 2;
+  color: #fff;
+}
+
+.collection-details {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.collection-details ion-icon {
+  font-size: 1rem;
+  color: #fff;
+}

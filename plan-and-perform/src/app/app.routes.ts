@@ -12,9 +12,22 @@ export const routes: Routes = [
     loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
   },
   {
+    path:'profile',
+    loadComponent: () => import('./features/profile/profile/profile.component').then(m => m.ProfileComponent),
+    canActivate: [authGuard]
+  },
+  {
     path:'edit-profile',
     loadComponent: () => import('./features/profile/edit-profile/edit-profile.component').then(m => m.EditProfileComponent),
     canActivate: [authGuard]
+  },
+  {
+    path: 'workout-dashboard',
+    loadComponent: () => import('./features/workouts/workout-dashboard/workout-dashboard.component').then(m => m.WorkoutDashboardComponent)
+  },
+  {
+    path: 'log-workout',
+    loadComponent: () => import('./features/workouts/log-workout/log-workout.component').then(m => m.LogWorkoutComponent)
   },
   {
     path: 'home',

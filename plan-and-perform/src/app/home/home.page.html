@@ -1,104 +1,120 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Acasă</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/profile">
-        <ion-icon name="person-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content class="ion-padding">
+
   <div class="welcome-section">
-    <h1>Bună, Ștefan! 👋</h1>
-    <p>Iată progresul tău de astăzi.</p>
-  </div>
-
-  <ion-card class="daily-progress-card">
-    <ion-card-content class="calorie-donut-container">
-      <div class="donut-chart-wrapper">
-        <div class="donut-chart" [style.background]="getDonutChartBackground()">
-          <div class="donut-center">
-            <span class="consumed">{{ kcalConsumed }}</span>
-            <span class="target">/ {{ kcalTarget }} kcal</span>
-          </div>
-        </div>
-      </div>
-      <div class="macro-stats">
-        <div class="macro-item">
-          <div class="color-dot protein"></div>
-          <div>
-            <p>Proteine</p>
-            <h3>{{ proteinConsumed }} / {{ proteinTarget }}g</h3>
-          </div>
-        </div>
-        <div class="macro-item">
-          <div class="color-dot carbs"></div>
-          <div>
-            <p>Carbohidrați</p>
-            <h3>{{ carbsConsumed }} / {{ carbsTarget }}g</h3>
-          </div>
-        </div>
-        <div class="macro-item">
-          <div class="color-dot fats"></div>
-          <div>
-            <p>Grăsimi</p>
-            <h3>{{ fatsConsumed }} / {{ fatsTarget }}g</h3>
-          </div>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card class="goals-card">
-    <ion-card-header>
-      <ion-card-title>Obiective săptămânale</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="goal-item">
-        <ion-icon name="trending-up-outline"></ion-icon>
-        <div class="goal-text">
-          <h3>Greutate</h3>
-          <p>Ai slăbit **0.5 kg** săptămâna aceasta</p>
-        </div>
-      </div>
-      <ion-progress-bar value="0.75" color="success"></ion-progress-bar>
-
-      <div class="goal-item ion-margin-top">
-        <ion-icon name="barbell-outline"></ion-icon>
-        <div class="goal-text">
-          <h3>Antrenamente</h3>
-          <p>Ai făcut **3** din **4** antrenamente</p>
-        </div>
-      </div>
-      <ion-progress-bar value="0.75" color="warning"></ion-progress-bar>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card class="quote-card">
-    <ion-card-content>
-      <div class="quote-container">
-        <ion-icon name="sparkles-outline"></ion-icon>
-        <p>"Nu te opri când ești obosit, oprește-te când ai terminat."</p>
-      </div>
-      <div class="quote-author">
-        <span>- Anonim</span>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <div class="quick-actions">
-    <ion-button expand="block" routerLink="/jurnal" class="action-button">
-      <ion-icon name="restaurant-outline" slot="start"></ion-icon>
-      Adaugă o masă
-    </ion-button>
-    <ion-button expand="block" routerLink="/antrenamente" class="action-button">
-      <ion-icon name="barbell-outline" slot="start"></ion-icon>
-      Începe un antrenament
+    <div class="user-info">
+      <h1 class="welcome-text">Good Morning</h1>
+      <p class="user-name">Alex</p>
+    </div>
+    <ion-button class="notifications-button">
+      <ion-icon name="notifications-outline"></ion-icon>
     </ion-button>
   </div>
+
+  <div class="calendar-scroll-container">
+    <div class="calendar-day-item">
+      <div class="day-of-week">sun</div>
+      <div class="day-of-month">08</div>
+    </div>
+    <div class="calendar-day-item">
+      <div class="day-of-week">mon</div>
+      <div class="day-of-month">09</div>
+    </div>
+    <div class="calendar-day-item highlight">
+      <div class="day-of-week">tue</div>
+      <div class="day-of-month">10</div>
+    </div>
+    <div class="calendar-day-item">
+      <div class="day-of-week">wed</div>
+      <div class="day-of-month">11</div>
+    </div>
+    <div class="calendar-day-item">
+      <div class="day-of-week">thu</div>
+      <div class="day-of-month">12</div>
+    </div>
+    <div class="calendar-day-item">
+      <div class="day-of-week">fri</div>
+      <div class="day-of-month">13</div>
+    </div>
+  </div>
+
+  <ion-card class="ai-tips-card">
+    <ion-card-content>
+      <div class="ai-tips-header">
+        <ion-icon name="bulb-outline"></ion-icon>
+        <h3>Fitmate Ai tips</h3>
+      </div>
+      <p>Energy low? Swap your routine with low-impact stretching and still stay on track.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="section-header">
+    <h2>Overview</h2>
+  </div>
+
+  <div class="stats-grid">
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <ion-icon name="footsteps-outline" class="stat-icon"></ion-icon>
+        <p>Steps</p>
+        <h2>10,698 <small>step</small></h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="stat-card yellow-card">
+      <ion-card-content>
+        <ion-icon name="navigate-outline" class="stat-icon"></ion-icon>
+        <p>Distance</p>
+        <h2>7.9 <small>km</small></h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <ion-icon name="flame-outline" class="stat-icon"></ion-icon>
+        <p>Calories</p>
+        <h2>150 <small>cal</small></h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <ion-icon name="heart-outline" class="stat-icon"></ion-icon>
+        <p>Heartrate</p>
+        <h2>120 <small>bpm</small></h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <ion-icon name="time-outline" class="stat-icon"></ion-icon>
+        <p>Duration</p>
+        <h2>231 <small>min</small></h2>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="section-header">
+    <h2>workout</h2>
+    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+  </div>
+
+  <ion-card class="workout-card">
+    <ion-card-content>
+      <div class="workout-tags">
+        <span class="tag cardio">Cardio</span>
+        <span class="tag lower-body">Lower body</span>
+      </div>
+      <div class="workout-details">
+        <div class="details-text">
+          <h2>Lower body</h2>
+          <div class="meta-info">
+            <p><ion-icon name="time-outline"></ion-icon> 45 min</p>
+            <p><ion-icon name="walk-outline"></ion-icon> Beginner</p>
+          </div>
+        </div>
+        <img src="https://i.ibb.co/6y4Tj82/male-workout.jpg" alt="Antrenament" class="workout-image">
+      </div>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

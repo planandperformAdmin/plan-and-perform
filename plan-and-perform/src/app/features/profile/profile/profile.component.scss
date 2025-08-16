@@ -1,0 +1,159 @@
+ion-content {
+  --background: #121212;
+  color: #fff;
+}
+
+ion-toolbar {
+  --background: #121212;
+  --color: #fff;
+}
+
+/* Stil pentru butonul Edit din header */
+.edit-button-header {
+  --color: #a0a0a0;
+  --background: #333333;
+  --border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin: 0 10px;
+}
+
+/* User Card Section */
+.user-card {
+  --background: #232323;
+  border-radius: 15px;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.user-info-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-details-text {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+/* Stil pentru butonul de Edit din cardul de utilizator */
+.edit-button-card {
+  --background: #ffc107;
+  --color: #000;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --border-radius: 20px;
+  height: 35px;
+  font-weight: bold;
+}
+
+.edit-button-card ion-icon {
+  margin-right: 5px;
+}
+
+/* Options Lists */
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option-card {
+  --background: #232323;
+  border-radius: 15px;
+  box-shadow: none;
+  margin: 0;
+}
+
+.option-card ion-item {
+  --background: transparent;
+  --inner-padding-end: 20px;
+  --inner-border-width: 0;
+  color: #fff;
+  border-radius: 15px;
+}
+
+ion-item ion-icon {
+  color: #a0a0a0;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.arrow-icon {
+  color: #a0a0a0;
+}
+
+/* NOU: Stiluri pentru comutatorul (toggle) */
+ion-toggle {
+  /* Track (ovalul) */
+  --track-background: #333333; /* gri închis când e OFF */
+  --track-background-checked: #ffc107; /* galben când e ON */
+  --track-border-radius: 30px;
+  --track-height: 52px; /* înălțimea ovalului */
+  --track-width: 70px;  /* lățimea ovalului */
+
+  /* Handle (bulina) */
+  --handle-background: #000; /* bulina neagră */
+  --handle-background-checked: #000;
+  --handle-width: 20px; /* bulina mai mică */
+  --handle-height: 20px;
+  --handle-border-radius: 50%;
+
+
+  /* Tranziție smooth */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Grupare de elemente */
+.middle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Logout Item */
+.logout-card {
+  --background: #232323;
+}
+
+.logout-item {
+  color: #e57373;
+}
+
+.logout-item ion-icon {
+  color: #e57373;
+}

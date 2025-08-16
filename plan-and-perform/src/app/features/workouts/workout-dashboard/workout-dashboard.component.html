@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="welcome-section">
+    <div class="user-avatar-container">
+      <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" alt="Avatar utilizator"/>
+    </div>
+    <div class="welcome-text">
+      <h2>Welcome Back</h2>
+      <h1>Nicolas Doflamingo! 👋</h1>
+    </div>
+  </div>
+
+  <ion-card class="workout-progress-card">
+    <ion-card-content class="progress-container">
+      <div class="progress-text">
+        <h3>Workout Progress</h3>
+        <p>12 Exercise left</p>
+      </div>
+      <div class="progress-donut">
+        <div class="donut-chart-small" style="background: conic-gradient(#0abab5 65%, #232227 65%)">
+          <div class="donut-center-small">
+            <span>65%</span>
+          </div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="activity-header">
+    <h2>Today's Activity</h2>
+    <div class="edit-button-container">
+      <span>Edit</span>
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+  </div>
+
+  <div class="activity-items-container">
+    <ion-card class="calories-card">
+      <ion-card-content>
+        <ion-icon name="barbell-outline"></ion-icon>
+        <h3>1.350</h3>
+        <p>Calories</p>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="exercise-list">
+      <div class="exercise-item">
+        <div class="dot orange-dot"></div>
+        <ion-label>
+          <h3>Push-ups</h3>
+          <p>Biceps, triceps, shoulders</p>
+        </ion-label>
+        <div class="activity-reps">15 x 3</div>
+      </div>
+      <div class="exercise-item">
+        <div class="dot blue-dot"></div>
+        <ion-label>
+          <h3>Squats</h3>
+          <p>calves, legs, thighs</p>
+        </ion-label>
+        <div class="activity-reps">25 x 3</div>
+      </div>
+      <div class="exercise-item">
+        <div class="dot purple-dot"></div>
+        <ion-label>
+          <h3>Lunges</h3>
+          <p>calves, hamstrings, glutes</p>
+        </ion-label>
+        <div class="activity-reps">15 x 3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overall-status-header">
+    <h2>Overall Status</h2>
+    <a href="#">See more →</a>
+  </div>
+
+  <div class="overall-status-cards-container">
+    <ion-card class="overall-status-card">
+      <ion-card-content class="status-content">
+        <ion-icon name="flame-outline" class="status-icon flame"></ion-icon>
+        <div class="status-text">
+          <h3>Calories Loss</h3>
+          <h2>12.182 Kcal</h2>
+          <p>+2.8%</p>
+        </div>
+        <div class="status-donut">
+          <div class="donut-chart-tiny" style="background: conic-gradient(#0abab5 37%, #f0f0f0 37%)">
+            <div class="donut-center-tiny">
+              <span>37%</span>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="overall-status-card">
+      <ion-card-content class="status-content">
+        <ion-icon name="scale-outline" class="status-icon scale"></ion-icon>
+        <div class="status-text">
+          <h3>Weight Loss</h3>
+          <h2>10.7 Kg</h2>
+          <p>+2.8%</p>
+        </div>
+        <div class="status-donut">
+          <div class="donut-chart-tiny" style="background: conic-gradient(#0abab5 80%, #f0f0f0 80%)">
+            <div class="donut-center-tiny">
+              <span>80%</span>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
