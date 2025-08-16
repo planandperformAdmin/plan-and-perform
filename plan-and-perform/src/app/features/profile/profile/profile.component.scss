@@ -9,15 +9,20 @@ ion-toolbar {
 }
 
 /* Stil pentru butonul Edit din header */
-.edit-button-header {
-  --color: #a0a0a0;
-  --background: #333333;
-  --border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  --padding-start: 0;
-  --padding-end: 0;
-  margin: 0 10px;
+.edit-button-card {
+  --background: #ffc107;
+  --color: #000;
+  --padding-start: 10px; /* Redus pentru un buton mai îngust */
+  --padding-end: 10px;   /* Redus pentru un buton mai îngust */
+  --border-radius: 20px;
+  height: 30px; /* Redus pentru un buton mai mic */
+  font-size: 0.8rem; /* Font mai mic */
+  font-weight: bold;
+}
+
+.edit-button-card ion-icon {
+  margin-right: 5px;
+  font-size: 1rem; /* Iconiță mai mică */
 }
 
 /* User Card Section */
@@ -108,13 +113,13 @@ ion-toolbar {
 }
 
 ion-item ion-icon {
-  color: #a0a0a0;
+  color: #ffc107;
   margin-right: 15px;
   font-size: 1.2rem;
 }
 
 .arrow-icon {
-  color: #a0a0a0;
+  color: #ffc107;
 }
 
 /* NOU: Stiluri pentru comutatorul (toggle) */
