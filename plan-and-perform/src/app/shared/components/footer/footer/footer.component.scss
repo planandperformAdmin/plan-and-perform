@@ -14,7 +14,7 @@
 
 ion-tab-button {
   --color: #a0a0a0;
-  --color-selected: #fff;
+  --color-selected: #D3FF56;
   background: transparent;
   flex: 1;
   max-width: 20%;
@@ -29,7 +29,7 @@ ion-tab-button ion-label {
 
 /* Stil pentru butonul central PRO */
 .pro-tab-button {
-  --background: #ffc107;
+  --background: #D3FF56;
   --color: #000;
   border-radius: 50%;
   width: 60px;
@@ -38,7 +38,7 @@ ion-tab-button ion-label {
   min-height: 60px;
   margin: 0 10px;
   transform: translateY(-0px);
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 4px 15px rgba(211, 255, 86, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +46,6 @@ ion-tab-button ion-label {
 
 .pro-tab-button ion-icon {
   font-size: 32px;
-  color: #ffc107;
+  color: #D3FF56;
   margin: 0;
 }
