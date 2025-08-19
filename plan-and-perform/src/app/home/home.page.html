@@ -1,120 +1,134 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-toolbar">
+    <ion-item lines="none" class="header-item">
+      <ion-avatar slot="start" class="profile-avatar">
+        <img src="https://i.ibb.co/L9H8FvC/mondi-morris.png" alt="Profile Picture">
+      </ion-avatar>
+      <ion-label>
+        <h1 class="greeting">Hi, Johan 👋</h1>
+        <p class="date">Saturday, May 10</p>
+      </ion-label>
+      <ion-icon name="notifications-outline" slot="end" class="notification-icon"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="ion-padding">
 
-  <div class="welcome-section">
-    <div class="user-info">
-      <h1 class="welcome-text">Good Morning</h1>
-      <p class="user-name">Alex</p>
-    </div>
-    <ion-button class="notifications-button">
-      <ion-icon name="notifications-outline"></ion-icon>
-    </ion-button>
+  <div class="section-header">
+    <ion-label class="section-title">Categories</ion-label>
+    <a href="#" class="view-all">View All</a>
+  </div>
+  <div class="categories-list">
+    <ion-chip class="category-chip active">
+      <div class="icon-bg"><ion-icon name="heart-outline"></ion-icon></div>
+      <ion-label>Cardio</ion-label>
+    </ion-chip>
+    <ion-chip class="category-chip">
+      <div class="icon-bg"><ion-icon name="walk-outline"></ion-icon></div>
+      <ion-label>Running</ion-label>
+    </ion-chip>
+    <ion-chip class="category-chip">
+      <div class="icon-bg"><ion-icon name="barbell-outline"></ion-icon></div>
+      <ion-label>Boxing</ion-label>
+    </ion-chip>
+    <ion-chip class="category-chip">
+      <div class="icon-bg"><ion-icon name="bicycle-outline"></ion-icon></div>
+      <ion-label>Cycling</ion-label>
+    </ion-chip>
   </div>
 
-  <div class="calendar-scroll-container">
-    <div class="calendar-day-item">
-      <div class="day-of-week">sun</div>
-      <div class="day-of-month">08</div>
-    </div>
-    <div class="calendar-day-item">
-      <div class="day-of-week">mon</div>
-      <div class="day-of-month">09</div>
-    </div>
-    <div class="calendar-day-item highlight">
-      <div class="day-of-week">tue</div>
-      <div class="day-of-month">10</div>
-    </div>
-    <div class="calendar-day-item">
-      <div class="day-of-week">wed</div>
-      <div class="day-of-month">11</div>
-    </div>
-    <div class="calendar-day-item">
-      <div class="day-of-week">thu</div>
-      <div class="day-of-month">12</div>
-    </div>
-    <div class="calendar-day-item">
-      <div class="day-of-week">fri</div>
-      <div class="day-of-month">13</div>
-    </div>
-  </div>
-
-  <ion-card class="ai-tips-card">
-    <ion-card-content>
-      <div class="ai-tips-header">
-        <ion-icon name="bulb-outline"></ion-icon>
-        <h3>Fitmate Ai tips</h3>
+  <ion-card class="ai-banner">
+    <ion-card-header>
+      <div class="tags">
+        <ion-chip class="tag-chip">GPT-6</ion-chip>
+        <ion-chip class="tag-chip">2M LLMs</ion-chip>
       </div>
-      <p>Energy low? Swap your routine with low-impact stretching and still stay on track.</p>
+    </ion-card-header>
+    <ion-card-content class="ai-card-content">
+      <div class="ai-text-container">
+        <h2>2,180+</h2>
+        <p>AI Conversations</p>
+      </div>
+      <div class="ai-image-container">
+        <img src="URL_IMAGINE_ROBOT_ALB" alt="AI Robot">
+        <ion-fab-button class="chat-fab">
+          <ion-icon name="chatbox-outline"></ion-icon>
+        </ion-fab-button>
+      </div>
     </ion-card-content>
   </ion-card>
 
   <div class="section-header">
-    <h2>Overview</h2>
+    <ion-label class="section-title">Activates</ion-label>
+    <a href="#" class="view-all">View All</a>
   </div>
-
-  <div class="stats-grid">
-    <ion-card class="stat-card">
-      <ion-card-content>
-        <ion-icon name="footsteps-outline" class="stat-icon"></ion-icon>
-        <p>Steps</p>
-        <h2>10,698 <small>step</small></h2>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="stat-card yellow-card">
-      <ion-card-content>
-        <ion-icon name="navigate-outline" class="stat-icon"></ion-icon>
-        <p>Distance</p>
-        <h2>7.9 <small>km</small></h2>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="stat-card">
-      <ion-card-content>
-        <ion-icon name="flame-outline" class="stat-icon"></ion-icon>
-        <p>Calories</p>
-        <h2>150 <small>cal</small></h2>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="stat-card">
-      <ion-card-content>
-        <ion-icon name="heart-outline" class="stat-icon"></ion-icon>
-        <p>Heartrate</p>
-        <h2>120 <small>bpm</small></h2>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card class="stat-card">
-      <ion-card-content>
-        <ion-icon name="time-outline" class="stat-icon"></ion-icon>
-        <p>Duration</p>
-        <h2>231 <small>min</small></h2>
-      </ion-card-content>
-    </ion-card>
-  </div>
-
-  <div class="section-header">
-    <h2>workout</h2>
-    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-  </div>
-
-  <ion-card class="workout-card">
-    <ion-card-content>
-      <div class="workout-tags">
-        <span class="tag cardio">Cardio</span>
-        <span class="tag lower-body">Lower body</span>
-      </div>
-      <div class="workout-details">
-        <div class="details-text">
-          <h2>Lower body</h2>
-          <div class="meta-info">
-            <p><ion-icon name="time-outline"></ion-icon> 45 min</p>
-            <p><ion-icon name="walk-outline"></ion-icon> Beginner</p>
+  <div class="actives-grid">
+    <ion-card class="active-card steps-card">
+      <ion-card-header class="card-header-flex">
+        <ion-icon name="walk-outline"></ion-icon>
+        <ion-label>Steps</ion-label>
+      </ion-card-header>
+      <ion-card-content class="card-content-center">
+        <div class="progress-container">
+          <div class="progress-ring">
+            <span class="progress-value">9104</span>
+            <small>Steps</small>
           </div>
         </div>
-        <img src="https://i.ibb.co/6y4Tj82/male-workout.jpg" alt="Antrenament" class="workout-image">
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="active-card sleep-card">
+      <ion-card-header class="card-header-flex">
+        <ion-icon name="moon-outline"></ion-icon>
+        <ion-label>Sleep</ion-label>
+      </ion-card-header>
+      <ion-card-content class="card-content-center">
+        <div class="bar-chart-container">
+          <div class="bar" style="height: 50%;"></div>
+          <div class="bar" style="height: 80%;"></div>
+          <div class="bar" style="height: 60%;"></div>
+          <div class="bar" style="height: 75%;"></div>
+          <div class="bar" style="height: 90%;"></div>
+        </div>
+        <p class="stats-text">6 Hours</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="active-card heart-card">
+      <ion-card-header class="card-header-flex">
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-label>Heart</ion-label>
+      </ion-card-header>
+      <ion-card-content class="card-content-center">
+        <div class="heart-graph">
+          <svg viewBox="0 0 100 50">
+            <polyline points="0,25 10,25 15,10 20,40 25,25 30,25 35,25 40,25 45,25 50,15 55,35 60,25 65,25 70,25 75,25 80,25 85,25 90,25 95,25 100,25"></polyline>
+          </svg>
+        </div>
+        <p class="stats-text">97 bpm</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="section-header">
+    <ion-label class="section-title">Diet & Nutrition</ion-label>
+    <a href="#" class="view-all">View All</a>
+  </div>
+  <div class="diet-list">
+    <ion-item lines="none" class="diet-item">
+      <ion-avatar slot="start" class="diet-image-avatar">
+        <img src="https://i.ibb.co/V95w9z8/oatmeal.jpg" alt="Oatmeal with Almond Milk">
+      </ion-avatar>
+      <ion-label>
+        <h2>Oatmeal with Almond Milk</h2>
+        <p>350 Calories</p>
+      </ion-label>
+      <ion-button fill="clear" slot="end" class="add-button">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
 
 </ion-content>

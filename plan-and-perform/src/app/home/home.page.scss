@@ -1,272 +1,334 @@
+// Variabile pentru culori și stil
+:root {
+  --ion-color-custom-green: #D3FF56;
+  --ion-color-custom-dark: #171717;
+  --ion-color-custom-darker: #121212;
+  --ion-color-custom-ai-bg: #405820;
+}
+
+// Stilizare globală pentru componentele Ionic
+
+
 ion-content {
-  --background: #121212; /* Fundal închis */
-  color: #fff;
-}
-
-ion-toolbar {
-  --background: #121212;
+  --background: linear-gradient(to top, #000000 0%, #D3FF56 100%);
   --color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --padding-bottom: 6.25rem; // Spațiu pentru footer, folosim rem
 }
 
-/* Secțiunea de bun venit */
-.welcome-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+ion-card {
+  --background: #D3FF56;
+  box-shadow: none;
+  border-radius: 1.25rem; // Folosim rem pentru border-radius
 }
 
-.welcome-text {
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: #ccc;
-  margin: 0;
-}
-
-.user-name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 0;
-}
-
-.notifications-button {
+// Header
+.header-item {
   --background: transparent;
-  --box-shadow: none;
   --padding-start: 0;
-  --padding-end: 0;
+  --inner-padding-end: 0;
+  
+  .profile-avatar {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid var(--ion-color-custom-green);
+    
+    img {
+      padding: 2px;
+    }
+  }
+
+  .greeting {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .date {
+    color: #999;
+    font-size: 0.8rem;
+  }
+
+  .notification-icon {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: var(--ion-color-custom-dark);
+  }
 }
 
-/* Secțiunea de calendar */
-.calendar-scroll-container {
-  display: flex;
-  justify-content: space-around;
-  overflow-x: scroll;
-  gap: 15px;
-  padding-bottom: 20px;
-  -webkit-overflow-scrolling: touch;
-
-  /* Ascunde bara de scroll pe toate browserele */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Ascunde bara de scroll pentru browserele bazate pe WebKit (Chrome, Safari, Opera) */
-.calendar-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.calendar-day-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 60px;
-  height: 90px;
-  border-radius: 45px;
-  background-color: #232323;
-  color: #ccc;
-  position: relative;
-}
-
-.day-of-week {
-  font-size: 0.9rem;
-  font-weight: normal;
-  text-align: center;
-}
-
-.day-of-month {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Stiluri pentru ziua selectată */
-.calendar-day-item.highlight {
-  background-color: #ffc107; /* Culoarea de fundal galbenă */
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 10px;
-}
-
-/* Stiluri pentru ziua săptămânii */
-.calendar-day-item.highlight .day-of-week {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-/* Stiluri pentru cercul alb al datei */
-.calendar-day-item.highlight .day-of-month {
-  background-color: #fff;
-  color: #000;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  bottom: initial;
-  font-size: 1.2rem;
-}
-
-/* Card cu sfaturi AI */
-.ai-tips-card {
-  --background: #232323;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.ai-tips-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-}
-
-.ai-tips-header ion-icon {
-  font-size: 1.2rem;
-  color: #ffc107;
-}
-
-.ai-tips-card h3 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.ai-tips-card p {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* Secțiunea Overview */
+// Secțiuni comune
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin: 1.5rem 0 0.625rem;
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .view-all {
+    color: #D3FF56;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
 }
 
-.section-header h2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #fff;
-  margin: 0;
+// Secțiunea de Categorii
+.categories-list {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.25rem;
+  
+  ion-chip {
+    --background-color: var(--ion-color-custom-darker);
+    color: #fff;
+    padding: 0.625rem 0.9375rem;
+    border-radius: 1.875rem;
+    height: auto;
+    
+    &.active {
+      --background: var(--ion-color-custom-green);
+      color: #000;
+      
+      .icon-bg {
+        --background: transparent;
+        ion-icon {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .icon-bg {
+    background: #333;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.3125rem;
+
+    ion-icon {
+      font-size: 1.2rem;
+      color: var(--ion-color-custom-green);
+    }
+  }
 }
 
-.stats-grid {
+// Banner AI
+.ai-banner {
+  --background-color: var(--ion-color-custom-green);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  
+  ion-card-header {
+    padding-bottom: 0;
+  }
+
+  .tags {
+    ion-chip {
+      --background: var(--ion-color-custom-green);
+      --color: #121212;
+      font-weight: bold;
+      font-size: 0.7rem;
+      height: 1.25rem;
+    }
+  }
+  
+  .ai-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    padding-top: 0;
+
+    .ai-text-container {
+      z-index: 1;
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0;
+        color: #121212;
+      }
+      p {
+        color: #121212;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+  
+  .ai-image-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    img {
+      height: 9.375rem;
+      object-fit: contain;
+    }
+    
+    .chat-fab {
+      --background: #121212;
+      --color: var(--ion-color-custom-green);
+      position: absolute;
+      right: 1.25rem;
+      bottom: 1.25rem;
+    }
+  }
+}
+
+// Secțiunea de Activități
+.actives-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-bottom: 20px;
+  // Aici este modificarea cheie
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
 }
 
-.stat-card {
-  --background: #232323;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.active-card {
+  --background: #171717;
+  text-align: center;
+  padding: 0.625rem;
+  
+  .card-header-flex {
+    display: flex; // Am schimbat înapoi la flex pentru alinierea corectă
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3125rem;
+
+    ion-icon {
+      font-size: 1.2rem;
+      color: #D3FF56;
+    }
+
+    ion-label {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin: 0;
+    }
+  }
+  
+  .card-content-center {
+    padding-top: 0.3125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .progress-ring {
+    width: 5rem;
+    height: 5rem;
+    border: 4px solid #D3FF56;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      bottom: -5px;
+      right: -5px;
+      border: 5px solid transparent;
+      border-radius: 50%;
+      border-top-color: var(--ion-color-custom-green);
+      transform: rotate(45deg);
+    }
+  }
+  
+  .progress-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .stats-text {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+  }
+  
+  .bar-chart-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.1875rem;
+    height: 3.125rem;
+    width: 80%;
+    margin: 0 auto 0.625rem;
+
+    .bar {
+      background-color: #D3FF56;
+      width: 0.5rem;
+      border-radius: 0.25rem;
+      height: var(--bar-height); // Folosim o variabilă pentru înălțime
+    }
+  }
+  
+  .heart-graph svg {
+    width: 100%;
+    height: 2.5rem;
+    polyline {
+      fill: none;
+      stroke: var(--ion-color-custom-green);
+      stroke-width: 2;
+    }
+  }
 }
 
-.stat-card.yellow-card {
-  --background: #ffc107;
-  color: #000;
-}
+// Secțiunea de Dietă
+.diet-item {
+  --background: #171717;
+  --padding-start: 0.625rem;
+  --inner-padding-end: 0.625rem;
+  border-radius: 1.25rem;
+  
+  ion-avatar {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 0.9375rem;
+    margin: 0;
+  }
 
-.stat-card.yellow-card .stat-icon,
-.stat-card.yellow-card p,
-.stat-card.yellow-card h2 {
-  color: #000;
-}
+  img {
+    border-radius: 0.9375rem;
+    object-fit: cover;
+  }
 
-.stat-card ion-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+  h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+  }
 
-.stat-icon {
-  font-size: 1.5rem;
-  color: #ffc107;
-}
-
-.stat-card p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 0;
-}
-
-.stat-card h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.stat-card h2 small {
-  font-size: 0.8rem;
-  font-weight: normal;
-  color: #ccc;
-}
-
-/* Secțiunea de antrenament */
-.workout-card {
-  --background: #232323;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.workout-tags {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.tag {
-  background-color: #383838;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-.workout-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 15px;
-}
-
-.details-text h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.meta-info {
-  display: flex;
-  gap: 15px;
-  margin-top: 5px;
-}
-
-.meta-info p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 0;
-}
-
-.meta-info ion-icon {
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.workout-image {
-  width: 100px;
-  height: auto;
-  border-radius: 10px;
+  p {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 0.3125rem 0 0;
+  }
+  
+  .add-button {
+    --background: #333;
+    border-radius: 50%;
+    color: #000;
+    --box-shadow: none;
+    font-size: 2.5rem;
+    height: auto;
+    width: auto;
+    
+    ion-icon {
+      font-size: 2.5rem;
+    }
+  }
 }
