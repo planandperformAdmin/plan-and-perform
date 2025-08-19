@@ -1,85 +1,111 @@
-<ion-content class="ion-padding">
+<ion-content>
 
-  <ion-card class="main-profile-card">
-    <div class="profile-header">
-      <div class="profile-pic-frame">
-        <img src="https://i.ibb.co/L9H8FvC/mondi-morris.png" alt="Profile Picture">
-      </div>
-      <h2 class="profile-name">Mondi Morris</h2>
-      <p class="profile-email">mondimorris@gmail.com</p>
-    </div>
-  </ion-card>
+  <!-- Grilă principală cu margine de 20px -->
+  <ion-grid class="main-grid-container">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="main-profile-card">
+          <div class="profile-header">
+            <div class="profile-pic-frame">
+              <img src="https://i.ibb.co/L9H8FvC/mondi-morris.png" alt="Profile Picture">
+            </div>
+            <h2 class="profile-name">Mondi Morris</h2>
+            <p class="profile-email">mondimorris@gmail.com</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-  <div class="stats-grid">
-    <ion-card class="stat-card">
-      <div class="stat-item">
-        <div class="stat-icon-wrapper">
-          <ion-icon name="scale-outline"></ion-icon>
-        </div>
-        <div class="stat-value">65.5 kg</div>
-        <div class="stat-label">Weight</div>
-      </div>
-    </ion-card>
+    <!-- Grilă pentru statistici cu spațiere de 16px -->
+    <ion-row class="stats-row">
+      <ion-col size="4">
+        <ion-card class="stat-card">
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <ion-icon name="scale-outline"></ion-icon>
+            </div>
+            <div class="stat-value">65.5 kg</div>
+            <div class="stat-label">Weight</div>
+          </div>
+        </ion-card>
+      </ion-col>
 
-    <ion-card class="stat-card">
-      <div class="stat-item">
-        <div class="stat-icon-wrapper">
-          <ion-icon name="man-outline"></ion-icon>
-        </div>
-        <div class="stat-value">5.7 Fit</div>
-        <div class="stat-label">Hight</div>
-      </div>
-    </ion-card>
+      <ion-col size="4">
+        <ion-card class="stat-card">
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <ion-icon name="man-outline"></ion-icon>
+            </div>
+            <div class="stat-value">5.7 Fit</div>
+            <div class="stat-label">Hight</div>
+          </div>
+        </ion-card>
+      </ion-col>
 
-    <ion-card class="stat-card">
-      <div class="stat-item">
-        <div class="stat-icon-wrapper">
-          <ion-icon name="calendar-outline"></ion-icon>
-        </div>
-        <div class="stat-value">25 Years</div>
-        <div class="stat-label">Age</div>
-      </div>
-    </ion-card>
-  </div>
+      <ion-col size="4">
+        <ion-card class="stat-card">
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="stat-value">25 Years</div>
+            <div class="stat-label">Age</div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-  <ion-card class="premium-banner">
-    <ion-item lines="none">
-      <ion-label>
-        <span class="pro-tag">Pro</span>
-        <h3>Go Premium & Unlock More!</h3>
-        <p>Upgrade to Premium and enjoy exclusive features.</p>
-      </ion-label>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-    </ion-item>
-  </ion-card>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="premium-banner">
+          <ion-item lines="none">
+            <ion-label>
+              <span class="pro-tag">Pro</span>
+              <h3>Go Premium & Unlock More!</h3>
+              <p>Upgrade to Premium and enjoy exclusive features.</p>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-  <ion-list class="options-list">
-    <ion-item lines="none" detail routerLink="/edit-profile">
-      <ion-icon name="person-outline" slot="start"></ion-icon>
-      <ion-label>Edit Profile</ion-label>
-    </ion-item>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list class="options-list">
+          <ion-item lines="none" detail routerLink="/edit-profile">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>Edit Profile</ion-label>
+          </ion-item>
 
-    <ion-item lines="none">
-      <ion-icon name="notifications-outline" slot="start"></ion-icon>
-      <ion-label>Notification</ion-label>
-      <ion-toggle slot="end" mode="md" checked></ion-toggle>
-    </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="notifications-outline" slot="start"></ion-icon>
+            <ion-label>Notification</ion-label>
+            <ion-toggle slot="end" mode="md" checked></ion-toggle>
+          </ion-item>
 
-    <ion-item lines="none">
-      <ion-icon name="heart-outline" slot="start"></ion-icon>
-      <ion-label>Sync to Health Connect</ion-label>
-      <ion-toggle slot="end" mode="md" checked></ion-toggle>
-    </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="heart-outline" slot="start"></ion-icon>
+            <ion-label>Sync to Health Connect</ion-label>
+            <ion-toggle slot="end" mode="md" checked></ion-toggle>
+          </ion-item>
 
-    <ion-item lines="none" detail routerLink="/settings">
-      <ion-icon name="settings-outline" slot="start"></ion-icon>
-      <ion-label>Setting</ion-label>
-    </ion-item>
-  </ion-list>
+          <ion-item lines="none" detail routerLink="/settings">
+            <ion-icon name="settings-outline" slot="start"></ion-icon>
+            <ion-label>Setting</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
 
-  <ion-button expand="block" class="logout-btn">
-    <ion-icon name="log-out-outline" slot="start"></ion-icon>
-    Log Out
-  </ion-button>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" class="logout-btn">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          Log Out
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
+  </ion-grid>
 </ion-content>
