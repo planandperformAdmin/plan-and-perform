@@ -1,4 +1,3 @@
-// Variabile pentru culori și stil
 :root {
   --ion-color-custom-green: #D3FF56;
   --ion-color-custom-dark: #171717;
@@ -6,23 +5,37 @@
   --ion-color-custom-ai-bg: #405820;
 }
 
-// Stilizare globală pentru componentele Ionic
+/* Stilizare globală pentru componentele Ionic */
+ion-header {
+  --background: linear-gradient(to top, #000000 0%, #20320c 100%);
+}
 
+ion-toolbar {
+  --background: linear-gradient(to bottom, #000000 0%, #20320c 100%);
+  --color: #fff;
+  padding: 0 1rem;
+}
 
 ion-content {
-  --background: linear-gradient(to top, #000000 0%, #D3FF56 100%);
+  --background: linear-gradient(to top, #000000 0%, #20320c 100%);
   --color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --padding-bottom: 6.25rem; // Spațiu pentru footer, folosim rem
+  --padding-bottom: 6.25rem;
 }
 
 ion-card {
-  --background: #D3FF56;
+  --background: var(--ion-color-custom-dark);
   box-shadow: none;
-  border-radius: 1.25rem; // Folosim rem pentru border-radius
+  border-radius: 1.25rem;
 }
 
-// Header
+/* Containerul principal al grilei, cu padding de 20px */
+.main-grid-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Header */
 .header-item {
   --background: transparent;
   --padding-start: 0;
@@ -41,10 +54,11 @@ ion-card {
   .greeting {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #fff;
   }
   
   .date {
-    color: #999;
+    color: #94978F;
     font-size: 0.8rem;
   }
 
@@ -52,76 +66,81 @@ ion-card {
     font-size: 1.5rem;
     padding: 0.5rem;
     border-radius: 50%;
-    background: var(--ion-color-custom-dark);
+    background: #121212;
+    color: #fff;
   }
 }
 
-// Secțiuni comune
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Secțiuni comune */
+.section-header-row {
   margin: 1.5rem 0 0.625rem;
-
-  .section-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  
-  .view-all {
-    color: #D3FF56;
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
 }
 
-// Secțiunea de Categorii
-.categories-list {
-  display: flex;
-  gap: 0.625rem;
-  overflow-x: auto;
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+  
+.view-all {
+  color: #D3FF56;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* Secțiunea de Categorii */
+.categories-row {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   margin-bottom: 1.25rem;
   
-  ion-chip {
-    --background-color: var(--ion-color-custom-darker);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.category-card {
+  --background: #171717;
+  color: #fff;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 1.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: none;
+  width: auto;
+  
+  ion-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
     color: #fff;
-    padding: 0.625rem 0.9375rem;
-    border-radius: 1.875rem;
-    height: auto;
-    
-    &.active {
-      --background: var(--ion-color-custom-green);
-      color: #000;
-      
-      .icon-bg {
-        --background: transparent;
-        ion-icon {
-          color: #000;
-        }
-      }
-    }
   }
 
-  .icon-bg {
-    background: #333;
-    border-radius: 50%;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.3125rem;
-
+  ion-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+    
+  &.active {
+    --background: #D3FF56;
+    color: #000;
+      
     ion-icon {
-      font-size: 1.2rem;
-      color: var(--ion-color-custom-green);
+      color: #000;
+    }
+
+    ion-label {
+      color: #000;
     }
   }
 }
 
-// Banner AI
+/* Banner AI */
 .ai-banner {
-  --background-color: var(--ion-color-custom-green);
+  --background: #D3FF56;
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
@@ -146,6 +165,7 @@ ion-card {
     align-items: flex-end;
     position: relative;
     padding-top: 0;
+    color: #fff;
 
     .ai-text-container {
       z-index: 1;
@@ -153,12 +173,12 @@ ion-card {
         font-size: 2.5rem;
         font-weight: bold;
         margin: 0;
-        color: #121212;
+        color: #000;
       }
       p {
-        color: #121212;
         font-size: 1rem;
         margin: 0;
+        color: #000;
       }
     }
   }
@@ -183,22 +203,28 @@ ion-card {
   }
 }
 
-// Secțiunea de Activități
-.actives-grid {
-  display: grid;
-  // Aici este modificarea cheie
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.625rem;
+/* Secțiunea de Activități */
+.actives-row {
   margin-bottom: 1.25rem;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .active-card {
   --background: #171717;
   text-align: center;
   padding: 0.625rem;
-  
+  flex-shrink: 0;
+  min-width: 150px;
+
   .card-header-flex {
-    display: flex; // Am schimbat înapoi la flex pentru alinierea corectă
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -224,6 +250,11 @@ ion-card {
     justify-content: center;
   }
 
+  .progress-ring-container {
+    width: 5rem;
+    height: 5rem;
+  }
+  
   .progress-ring {
     width: 5rem;
     height: 5rem;
@@ -266,13 +297,14 @@ ion-card {
     gap: 0.1875rem;
     height: 3.125rem;
     width: 80%;
-    margin: 0 auto 0.625rem;
+    margin: auto;
 
     .bar {
       background-color: #D3FF56;
       width: 0.5rem;
       border-radius: 0.25rem;
-      height: var(--bar-height); // Folosim o variabilă pentru înălțime
+      height: var(--bar-height);
+      
     }
   }
   
@@ -287,7 +319,11 @@ ion-card {
   }
 }
 
-// Secțiunea de Dietă
+/* Secțiunea de Dietă */
+.diet-list-row {
+  margin-top: 1.5rem;
+}
+
 .diet-item {
   --background: #171717;
   --padding-start: 0.625rem;
@@ -310,6 +346,7 @@ ion-card {
     font-size: 1rem;
     font-weight: bold;
     margin: 0;
+    color: #aaa
   }
 
   p {
@@ -318,17 +355,4 @@ ion-card {
     margin: 0.3125rem 0 0;
   }
   
-  .add-button {
-    --background: #333;
-    border-radius: 50%;
-    color: #000;
-    --box-shadow: none;
-    font-size: 2.5rem;
-    height: auto;
-    width: auto;
-    
-    ion-icon {
-      font-size: 2.5rem;
-    }
-  }
 }

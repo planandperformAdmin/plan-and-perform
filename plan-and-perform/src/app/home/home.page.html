@@ -13,122 +13,158 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<!-- Am înlocuit `ion-content` cu o structură de grilă, 
+     adăugând padding orizontal de 20px pentru a respecta specificațiile. -->
+<ion-content>
+  <ion-grid class="main-grid-container">
+    <ion-row class="ion-align-items-center ion-justify-content-between section-header-row">
+      <ion-col size="auto">
+        <ion-label class="section-title">Categories</ion-label>
+      </ion-col>
+      <ion-col size="auto" class="ion-text-end">
+        <a href="#" class="view-all">View All</a>
+      </ion-col>
+    </ion-row>
 
-  <div class="section-header">
-    <ion-label class="section-title">Categories</ion-label>
-    <a href="#" class="view-all">View All</a>
-  </div>
-  <div class="categories-list">
-    <ion-chip class="category-chip active">
-      <div class="icon-bg"><ion-icon name="heart-outline"></ion-icon></div>
-      <ion-label>Cardio</ion-label>
-    </ion-chip>
-    <ion-chip class="category-chip">
-      <div class="icon-bg"><ion-icon name="walk-outline"></ion-icon></div>
-      <ion-label>Running</ion-label>
-    </ion-chip>
-    <ion-chip class="category-chip">
-      <div class="icon-bg"><ion-icon name="barbell-outline"></ion-icon></div>
-      <ion-label>Boxing</ion-label>
-    </ion-chip>
-    <ion-chip class="category-chip">
-      <div class="icon-bg"><ion-icon name="bicycle-outline"></ion-icon></div>
-      <ion-label>Cycling</ion-label>
-    </ion-chip>
-  </div>
+    <ion-row class="categories-row ion-nowrap">
+      <ion-col size="auto">
+        <ion-card class="category-card active">
+          <ion-icon name="heart-outline"></ion-icon>
+          <ion-label>Cardio</ion-label>
+        </ion-card>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-card class="category-card">
+          <ion-icon name="walk-outline"></ion-icon>
+          <ion-label>Running</ion-label>
+        </ion-card>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-card class="category-card">
+          <ion-icon name="barbell-outline"></ion-icon>
+          <ion-label>Boxing</ion-label>
+        </ion-card>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-card class="category-card">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label>Cycling</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-padding-top ion-padding-bottom">
+      <ion-col size="12">
+        <ion-card class="ai-banner">
+          <ion-card-header>
+            <div class="tags">
+              <ion-chip class="tag-chip">GPT-6</ion-chip>
+              <ion-chip class="tag-chip">2M LLMs</ion-chip>
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ai-card-content">
+            <div class="ai-text-container">
+              <h2>2,180+</h2>
+              <p>AI Conversations</p>
+            </div>
+            <div class="ai-image-container">
+              <ion-fab-button class="chat-fab">
+                <ion-icon name="chatbox-outline"></ion-icon>
+              </ion-fab-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-  <ion-card class="ai-banner">
-    <ion-card-header>
-      <div class="tags">
-        <ion-chip class="tag-chip">GPT-6</ion-chip>
-        <ion-chip class="tag-chip">2M LLMs</ion-chip>
-      </div>
-    </ion-card-header>
-    <ion-card-content class="ai-card-content">
-      <div class="ai-text-container">
-        <h2>2,180+</h2>
-        <p>AI Conversations</p>
-      </div>
-      <div class="ai-image-container">
-        <img src="URL_IMAGINE_ROBOT_ALB" alt="AI Robot">
-        <ion-fab-button class="chat-fab">
-          <ion-icon name="chatbox-outline"></ion-icon>
-        </ion-fab-button>
-      </div>
-    </ion-card-content>
-  </ion-card>
+    <ion-row class="ion-align-items-center ion-justify-content-between section-header-row">
+      <ion-col size="auto">
+        <ion-label class="section-title">Activates</ion-label>
+      </ion-col>
+      <ion-col size="auto" class="ion-text-end">
+        <a href="#" class="view-all">View All</a>
+      </ion-col>
+    </ion-row>
 
-  <div class="section-header">
-    <ion-label class="section-title">Activates</ion-label>
-    <a href="#" class="view-all">View All</a>
-  </div>
-  <div class="actives-grid">
-    <ion-card class="active-card steps-card">
-      <ion-card-header class="card-header-flex">
-        <ion-icon name="walk-outline"></ion-icon>
-        <ion-label>Steps</ion-label>
-      </ion-card-header>
-      <ion-card-content class="card-content-center">
-        <div class="progress-container">
-          <div class="progress-ring">
-            <span class="progress-value">9104</span>
-            <small>Steps</small>
-          </div>
-        </div>
-      </ion-card-content>
-    </ion-card>
+    <ion-row class="actives-row ion-nowrap">
+      <ion-col size="auto">
+        <ion-card class="active-card steps-card">
+          <ion-card-header class="card-header-flex">
+            <ion-icon name="walk-outline"></ion-icon>
+            <ion-label>Steps</ion-label>
+          </ion-card-header>
+          <ion-card-content class="card-content-center">
+            <div class="progress-ring-container">
+              <div class="progress-ring">
+                <span class="progress-value">9104</span>
+                <small>Steps</small>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col size="auto">
+        <ion-card class="active-card sleep-card">
+          <ion-card-header class="card-header-flex">
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-label>Sleep</ion-label>
+          </ion-card-header>
+          <ion-card-content class="card-content-center">
+            <div class="bar-chart-container">
+              <div class="bar" style="height: 50%;"></div>
+              <div class="bar" style="height: 80%;"></div>
+              <div class="bar" style="height: 60%;"></div>
+              <div class="bar" style="height: 75%;"></div>
+              <div class="bar" style="height: 100%;"></div>
+              <div class="bar" style="height: 60%;"></div>
+              <div class="bar" style="height: 75%;"></div>
+            </div>
+            <p class="stats-text">6 Hours</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col size="auto">
+        <ion-card class="active-card heart-card">
+          <ion-card-header class="card-header-flex">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-label>Heart</ion-label>
+          </ion-card-header>
+          <ion-card-content class="card-content-center">
+            <div class="heart-graph">
+              <svg viewBox="0 0 100 50">
+                <polyline points="0,25 10,25 15,10 20,40 25,25 30,25 35,25 40,25 45,25 50,15 55,35 60,25 65,25 70,25 75,25 80,25 85,25 90,25 95,25 100,25"></polyline>
+              </svg>
+            </div>
+            <p class="stats-text">97 bpm</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-    <ion-card class="active-card sleep-card">
-      <ion-card-header class="card-header-flex">
-        <ion-icon name="moon-outline"></ion-icon>
-        <ion-label>Sleep</ion-label>
-      </ion-card-header>
-      <ion-card-content class="card-content-center">
-        <div class="bar-chart-container">
-          <div class="bar" style="height: 50%;"></div>
-          <div class="bar" style="height: 80%;"></div>
-          <div class="bar" style="height: 60%;"></div>
-          <div class="bar" style="height: 75%;"></div>
-          <div class="bar" style="height: 90%;"></div>
-        </div>
-        <p class="stats-text">6 Hours</p>
-      </ion-card-content>
-    </ion-card>
+    <ion-row class="ion-align-items-center ion-justify-content-between section-header-row">
+      <ion-col size="auto">
+        <ion-label class="section-title">Diet & Nutrition</ion-label>
+      </ion-col>
+      <ion-col size="auto" class="ion-text-end">
+        <a href="#" class="view-all">View All</a>
+      </ion-col>
+    </ion-row>
 
-    <ion-card class="active-card heart-card">
-      <ion-card-header class="card-header-flex">
-        <ion-icon name="heart-outline"></ion-icon>
-        <ion-label>Heart</ion-label>
-      </ion-card-header>
-      <ion-card-content class="card-content-center">
-        <div class="heart-graph">
-          <svg viewBox="0 0 100 50">
-            <polyline points="0,25 10,25 15,10 20,40 25,25 30,25 35,25 40,25 45,25 50,15 55,35 60,25 65,25 70,25 75,25 80,25 85,25 90,25 95,25 100,25"></polyline>
-          </svg>
-        </div>
-        <p class="stats-text">97 bpm</p>
-      </ion-card-content>
-    </ion-card>
-  </div>
+    <ion-row class="diet-list-row">
+      <ion-col size="12">
+        <ion-item lines="none" class="diet-item">
+          <ion-avatar slot="start" class="diet-image-avatar">
+            <img src="https://i.ibb.co/V95w9z8/oatmeal.jpg" alt="Oatmeal with Almond Milk">
+          </ion-avatar>
+          <ion-label>
+            <h2>Oatmeal with Almond Milk</h2>
+            <p>350 Calories</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <div class="section-header">
-    <ion-label class="section-title">Diet & Nutrition</ion-label>
-    <a href="#" class="view-all">View All</a>
-  </div>
-  <div class="diet-list">
-    <ion-item lines="none" class="diet-item">
-      <ion-avatar slot="start" class="diet-image-avatar">
-        <img src="https://i.ibb.co/V95w9z8/oatmeal.jpg" alt="Oatmeal with Almond Milk">
-      </ion-avatar>
-      <ion-label>
-        <h2>Oatmeal with Almond Milk</h2>
-        <p>350 Calories</p>
-      </ion-label>
-      <ion-button fill="clear" slot="end" class="add-button">
-        <ion-icon name="add-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </div>
-
+  </ion-grid>
 </ion-content>
